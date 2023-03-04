@@ -8,7 +8,7 @@
 	import Icon from "../lib/Icon.svelte"
 	import hljs from "highlight.js"
     import highlightjs from "highlightjs-svelte"
-	import "highlight.js/styles/github-dark.css"
+	import "highlight.js/styles/monokai-sublime.css"
 	import { storeHighlightJs } from "@skeletonlabs/skeleton"
 
     highlightjs(hljs)
