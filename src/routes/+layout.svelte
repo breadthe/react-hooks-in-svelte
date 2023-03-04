@@ -6,6 +6,13 @@
 	import { page } from "$app/stores"
 	import { AppShell, AppBar, AppRail, AppRailTile } from "@skeletonlabs/skeleton"
 	import Icon from "../lib/Icon.svelte"
+	import hljs from "highlight.js"
+    import highlightjs from "highlightjs-svelte"
+	import "highlight.js/styles/github-dark.css"
+	import { storeHighlightJs } from "@skeletonlabs/skeleton"
+
+    highlightjs(hljs)
+	storeHighlightJs.set(hljs)
 
 	let tile1Url = "/useState"
 	let tile2Url = "/useEffect"
