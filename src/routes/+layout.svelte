@@ -5,9 +5,7 @@
 	import { selectedTile } from "../lib/store"
 	import { page } from "$app/stores"
 	import { AppShell, AppBar, AppRail, AppRailTile } from "@skeletonlabs/skeleton"
-	import CodeIcon from "../lib/CodeIcon.svelte"
-	import HomeIcon from "../lib/HomeIcon.svelte"
-	import GitHubIcon from "../lib/GitHubIcon.svelte"
+	import Icon from "../lib/Icon.svelte"
 
 	let tile1Url = "/useState"
 	let tile2Url = "/useEffect"
@@ -45,7 +43,7 @@
 					value={0}
 					tag="a"
 					href="/"
-					class={"/" === $page.url.pathname ? "bg-primary-500" : ""}><HomeIcon /></AppRailTile
+					class={"/" === $page.url.pathname ? "bg-primary-500" : ""}><Icon icon="home" /></AppRailTile
 				>
 				<AppRailTile
 					label="useState"
@@ -53,7 +51,7 @@
 					value={1}
 					tag="a"
 					href={tile1Url}
-					class={tile1Url === $page.url.pathname ? "bg-primary-500" : ""}><CodeIcon /></AppRailTile
+					class={tile1Url === $page.url.pathname ? "bg-primary-500" : ""}><Icon icon="code" /></AppRailTile
 				>
 				<AppRailTile
 					label="useEffect"
@@ -61,7 +59,7 @@
 					value={2}
 					tag="a"
 					href={tile2Url}
-					class={tile2Url === $page.url.pathname ? "bg-primary-500" : ""}><CodeIcon /></AppRailTile
+					class={tile2Url === $page.url.pathname ? "bg-primary-500" : ""}><Icon icon="code" /></AppRailTile
 				>
 			</svelte:fragment>
 
@@ -73,7 +71,7 @@
 					tag="a"
 					href="https://github.com/breadthe/react-vs-svelte"
 					target="_blank"
-					rel="noreferrer"><GitHubIcon /></AppRailTile
+					rel="noreferrer"><Icon icon="github" /></AppRailTile
 				>
 			</svelte:fragment>
 		</AppRail>
