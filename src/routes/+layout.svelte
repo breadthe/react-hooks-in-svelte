@@ -1,17 +1,25 @@
 <script>
-	import '@skeletonlabs/skeleton/themes/theme-modern.css';
-	import '@skeletonlabs/skeleton/styles/all.css';
-	import '../app.postcss';
-	import { AppShell, AppBar } from '@skeletonlabs/skeleton';
+	import "@skeletonlabs/skeleton/themes/theme-modern.css"
+	import "@skeletonlabs/skeleton/styles/all.css"
+	import "../app.postcss"
+	import { selectedTile } from "../lib/store"
+	import { page } from "$app/stores"
+	import { AppShell, AppBar, AppRail, AppRailTile } from "@skeletonlabs/skeleton"
+	import CodeIcon from "../lib/CodeIcon.svelte"
+	import HomeIcon from "../lib/HomeIcon.svelte"
+	import GitHubIcon from "../lib/GitHubIcon.svelte"
+
+	let tile1Url = "/useState"
+	let tile2Url = "/useEffect"
 </script>
 
 <!-- App Shell -->
 <AppShell>
 	<svelte:fragment slot="header">
 		<!-- App Bar -->
-		<AppBar>
+		<AppBar class="bg-primary-500">
 			<svelte:fragment slot="lead">
-				<strong class="text-xl uppercase">Skeleton</strong>
+				<a href="/" title="Home page"><strong class="text-xl uppercase">React vs Svelte</strong></a>
 			</svelte:fragment>
 			<svelte:fragment slot="trail">
 				<a
@@ -25,6 +33,52 @@
 			</svelte:fragment>
 		</AppBar>
 	</svelte:fragment>
+
+	<svelte:fragment slot="sidebarLeft">
+		<!-- AppRail -->
+		<AppRail selected={selectedTile}>
+			<svelte:fragment slot="lead">
+				<!-- AppRailTiles -->
+				<AppRailTile
+					label="Home"
+					title="Home"
+					value={0}
+					tag="a"
+					href="/"
+					class={"/" === $page.url.pathname ? "bg-primary-500" : ""}><HomeIcon /></AppRailTile
+				>
+				<AppRailTile
+					label="useState"
+					title="useState"
+					value={1}
+					tag="a"
+					href={tile1Url}
+					class={tile1Url === $page.url.pathname ? "bg-primary-500" : ""}><CodeIcon /></AppRailTile
+				>
+				<AppRailTile
+					label="useEffect"
+					title="useEffect"
+					value={2}
+					tag="a"
+					href={tile2Url}
+					class={tile2Url === $page.url.pathname ? "bg-primary-500" : ""}><CodeIcon /></AppRailTile
+				>
+			</svelte:fragment>
+
+			<svelte:fragment slot="trail">
+				<!-- AppRailTiles -->
+				<AppRailTile
+					label="GitHub"
+					title="GitHub"
+					tag="a"
+					href="https://github.com/breadthe/react-vs-svelte"
+					target="_blank"
+					rel="noreferrer"><GitHubIcon /></AppRailTile
+				>
+			</svelte:fragment>
+		</AppRail>
+	</svelte:fragment>
+
 	<!-- Page Route Content -->
 	<slot />
 </AppShell>
