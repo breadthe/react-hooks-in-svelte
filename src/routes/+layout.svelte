@@ -6,13 +6,13 @@
 	import { page } from "$app/stores"
 	import { AppShell, AppBar, AppRail, AppRailTile } from "@skeletonlabs/skeleton"
 	import Icon from "../lib/Icon.svelte"
-	import hljs from "highlight.js"
-    import highlightjs from "highlightjs-svelte"
-	import "highlight.js/styles/monokai-sublime.css"
-	import { storeHighlightJs } from "@skeletonlabs/skeleton"
+	// import hljs from "highlight.js"
+    // import highlightjs from "highlightjs-svelte"
+	// import "highlight.js/styles/monokai-sublime.css"
+	// import { storeHighlightJs } from "@skeletonlabs/skeleton"
 
-    highlightjs(hljs)
-	storeHighlightJs.set(hljs)
+    // highlightjs(hljs)
+	// storeHighlightJs.set(hljs)
 
 	let tile1Url = "/useState"
 	let tile2Url = "/useEffect"
