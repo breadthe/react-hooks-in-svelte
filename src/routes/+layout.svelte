@@ -2,21 +2,10 @@
 	import "@skeletonlabs/skeleton/themes/theme-skeleton.css"
 	import "@skeletonlabs/skeleton/styles/all.css"
 	import "../app.postcss"
-	import { selectedTile } from "../lib/store"
+	import { selectedTile, tiles } from "../lib/store"
 	import { page } from "$app/stores"
 	import { AppShell, AppBar, AppRail, AppRailTile } from "@skeletonlabs/skeleton"
 	import Icon from "../lib/Icon.svelte"
-
-	let tiles = [
-		{ id: 0, url: "/", label: "Home", title: "Home", icon: "home" },
-		{ id: 1, url: "/useState", label: "useState", title: "useState", icon: "code" },
-		{ id: 2, url: "/useEffect", label: "useEffect", title: "useEffect", icon: "code" },
-		{ id: 3, url: "/useMemo", label: "useMemo", title: "useMemo", icon: "code" },
-		{ id: 4, url: "/useRef", label: "useRef", title: "useRef", icon: "code" },
-		{ id: 5, url: "/useReducer", label: "useReducer", title: "useReducer", icon: "code" },
-		{ id: 6, url: "/useCallback", label: "useCallback", title: "useCallback", icon: "code" },
-		{ id: 7, url: "/useContext", label: "useContext", title: "useContext", icon: "code" }
-	]
 </script>
 
 <!-- App Shell -->
@@ -45,7 +34,7 @@
 		<AppRail selected={selectedTile}>
 			<svelte:fragment slot="lead">
 				<!-- AppRailTiles -->
-				{#each tiles as tile (tile.id)}
+				{#each $tiles as tile (tile.id)}
 					<AppRailTile
 						label={tile.label}
 						title={tile.title}
