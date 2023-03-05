@@ -13,6 +13,7 @@
 	let tile4Url = "/useRef"
 	let tile5Url = "/useReducer"
 	let tile6Url = "/useCallback"
+	let tile7Url = "/useContext"
 </script>
 
 <!-- App Shell -->
@@ -96,6 +97,14 @@
 					tag="a"
 					href={tile6Url}
 					class={tile6Url === $page.url.pathname ? "bg-primary-500" : ""}><Icon icon="code" /></AppRailTile
+				>
+				<AppRailTile
+					label="useContext"
+					title="useContext"
+					value={6}
+					tag="a"
+					href={tile7Url}
+					class={tile7Url === $page.url.pathname ? "bg-primary-500" : ""}><Icon icon="code" /></AppRailTile
 				>
 			</svelte:fragment>
 
