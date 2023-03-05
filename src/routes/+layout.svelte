@@ -7,13 +7,16 @@
 	import { AppShell, AppBar, AppRail, AppRailTile } from "@skeletonlabs/skeleton"
 	import Icon from "../lib/Icon.svelte"
 
-	let tile1Url = "/useState"
-	let tile2Url = "/useEffect"
-	let tile3Url = "/useMemo"
-	let tile4Url = "/useRef"
-	let tile5Url = "/useReducer"
-	let tile6Url = "/useCallback"
-	let tile7Url = "/useContext"
+	let tiles = [
+		{ id: 0, url: "/", label: "Home", title: "Home", icon: "home" },
+		{ id: 1, url: "/useState", label: "useState", title: "useState", icon: "code" },
+		{ id: 2, url: "/useEffect", label: "useEffect", title: "useEffect", icon: "code" },
+		{ id: 3, url: "/useMemo", label: "useMemo", title: "useMemo", icon: "code" },
+		{ id: 4, url: "/useRef", label: "useRef", title: "useRef", icon: "code" },
+		{ id: 5, url: "/useReducer", label: "useReducer", title: "useReducer", icon: "code" },
+		{ id: 6, url: "/useCallback", label: "useCallback", title: "useCallback", icon: "code" },
+		{ id: 7, url: "/useContext", label: "useContext", title: "useContext", icon: "code" }
+	]
 </script>
 
 <!-- App Shell -->
@@ -42,70 +45,16 @@
 		<AppRail selected={selectedTile}>
 			<svelte:fragment slot="lead">
 				<!-- AppRailTiles -->
-				<AppRailTile
-					label="Home"
-					title="Home"
-					value={0}
-					tag="a"
-					href="/"
-					class={"/" === $page.url.pathname ? "bg-primary-500" : ""}><Icon icon="home" /></AppRailTile
-				>
-				<AppRailTile
-					label="useState"
-					title="useState"
-					value={1}
-					tag="a"
-					href={tile1Url}
-					class={tile1Url === $page.url.pathname ? "bg-primary-500" : ""}><Icon icon="code" /></AppRailTile
-				>
-				<AppRailTile
-					label="useEffect"
-					title="useEffect"
-					value={2}
-					tag="a"
-					href={tile2Url}
-					class={tile2Url === $page.url.pathname ? "bg-primary-500" : ""}><Icon icon="code" /></AppRailTile
-				>
-				<AppRailTile
-					label="useMemo"
-					title="useMemo"
-					value={3}
-					tag="a"
-					href={tile3Url}
-					class={tile3Url === $page.url.pathname ? "bg-primary-500" : ""}><Icon icon="code" /></AppRailTile
-				>
-				<AppRailTile
-					label="useRef"
-					title="useRef"
-					value={4}
-					tag="a"
-					href={tile4Url}
-					class={tile4Url === $page.url.pathname ? "bg-primary-500" : ""}><Icon icon="code" /></AppRailTile
-				>
-				<AppRailTile
-					label="useReducer"
-					title="useReducer"
-					value={4}
-					tag="a"
-					href={tile5Url}
-					class={tile5Url === $page.url.pathname ? "bg-primary-500" : ""}><Icon icon="code" /></AppRailTile
-				>
-				<AppRailTile
-					label="useCallback"
-					title="useCallback"
-					value={5}
-					tag="a"
-					href={tile6Url}
-					class={tile6Url === $page.url.pathname ? "bg-primary-500" : ""}><Icon icon="code" /></AppRailTile
-				>
-				<AppRailTile
-					label="useContext"
-					title="useContext"
-					value={6}
-					tag="a"
-					href={tile7Url}
-					class={tile7Url === $page.url.pathname ? "bg-primary-500" : ""}><Icon icon="code" /></AppRailTile
-				>
+				{#each tiles as tile (tile.id)}
+					<AppRailTile
+						label={tile.label}
+						title={tile.title}
+						value={tile.id}
+						tag="a"
+						href={tile.url}
+						class={tile.url === $page.url.pathname ? "bg-primary-500" : ""}><Icon icon={tile.icon} /></AppRailTile
+					>
+				{/each}
 			</svelte:fragment>
 
 			<svelte:fragment slot="trail">
