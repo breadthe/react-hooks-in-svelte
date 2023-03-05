@@ -4,7 +4,7 @@
 	import "../app.postcss"
 	import { selectedTile, tiles } from "../lib/store"
 	import { page } from "$app/stores"
-	import { AppShell, AppBar, AppRail, AppRailTile } from "@skeletonlabs/skeleton"
+	import { AppShell, AppBar, AppRail, AppRailTile, LightSwitch } from "@skeletonlabs/skeleton"
 	import Icon from "../lib/Icon.svelte"
 </script>
 
@@ -17,14 +17,7 @@
 				<a href="/" title="Home page"><strong class="text-xl uppercase">React vs Svelte</strong></a>
 			</svelte:fragment>
 			<svelte:fragment slot="trail">
-				<a
-					class="btn btn-sm variant-ghost-surface"
-					href="https://github.com/breadthe/react-vs-svelte"
-					target="_blank"
-					rel="noreferrer"
-				>
-					GitHub
-				</a>
+                <!-- <LightSwitch /> -->
 			</svelte:fragment>
 		</AppBar>
 	</svelte:fragment>
