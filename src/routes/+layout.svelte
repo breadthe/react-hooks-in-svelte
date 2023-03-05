@@ -6,16 +6,10 @@
 	import { page } from "$app/stores"
 	import { AppShell, AppBar, AppRail, AppRailTile } from "@skeletonlabs/skeleton"
 	import Icon from "../lib/Icon.svelte"
-	// import hljs from "highlight.js"
-    // import highlightjs from "highlightjs-svelte"
-	// import "highlight.js/styles/monokai-sublime.css"
-	// import { storeHighlightJs } from "@skeletonlabs/skeleton"
-
-    // highlightjs(hljs)
-	// storeHighlightJs.set(hljs)
 
 	let tile1Url = "/useState"
 	let tile2Url = "/useEffect"
+	let tile3Url = "/useMemo"
 </script>
 
 <!-- App Shell -->
@@ -67,6 +61,14 @@
 					tag="a"
 					href={tile2Url}
 					class={tile2Url === $page.url.pathname ? "bg-primary-500" : ""}><Icon icon="code" /></AppRailTile
+				>
+				<AppRailTile
+					label="useMemo"
+					title="useMemo"
+					value={3}
+					tag="a"
+					href={tile3Url}
+					class={tile3Url === $page.url.pathname ? "bg-primary-500" : ""}><Icon icon="code" /></AppRailTile
 				>
 			</svelte:fragment>
 
