@@ -12,6 +12,7 @@
 	let tile3Url = "/useMemo"
 	let tile4Url = "/useRef"
 	let tile5Url = "/useReducer"
+	let tile6Url = "/useCallback"
 </script>
 
 <!-- App Shell -->
@@ -87,6 +88,14 @@
 					tag="a"
 					href={tile5Url}
 					class={tile5Url === $page.url.pathname ? "bg-primary-500" : ""}><Icon icon="code" /></AppRailTile
+				>
+				<AppRailTile
+					label="useCallback"
+					title="useCallback"
+					value={5}
+					tag="a"
+					href={tile6Url}
+					class={tile6Url === $page.url.pathname ? "bg-primary-500" : ""}><Icon icon="code" /></AppRailTile
 				>
 			</svelte:fragment>
 
