@@ -52,7 +52,7 @@
 					label="GitHub"
 					title="GitHub"
 					tag="a"
-					href="https://github.com/breadthe/react-vs-svelte"
+					href="https://github.com/breadthe/react-hooks-in-svelte"
 					target="_blank"
 					rel="noreferrer"><Icon icon="github" /></AppRailTile
 				>

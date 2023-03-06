@@ -1,22 +1,14 @@
-# create-svelte
+# React Hooks in Svelte
 
-Everything you need to build a Svelte project, powered by [`create-svelte`](https://github.com/sveltejs/kit/tree/master/packages/create-svelte).
+A SvelteKit website showing side-by-side examples of React hooks and the equivalent Svelte code.
 
-## Creating a project
+The code examples are 100% made by [Josh Nuss](https://github.com/joshnuss) with [React Hooks in Svelte](https://github.com/joshnuss/react-hooks-in-svelte). All I've done is dress them up visually, so I could play around with [SvelteKit](https://kit.svelte.dev/) and [Skeleton UI](https://www.skeleton.dev/).
 
-If you're seeing this, you've probably already done this step. Congrats!
-
-```bash
-# create a new project in the current directory
-npm create svelte@latest
-
-# create a new project in my-app
-npm create svelte@latest my-app
-```
+![React useState hook in Svelte screenshot](https://user-images.githubusercontent.com/17433578/223051593-5c8530fc-4ed9-4ce9-984e-268e57e19012.png)
 
 ## Developing
 
-Once you've created a project and installed dependencies with `npm install` (or `pnpm install` or `yarn`), start a development server:
+Once you've installed dependencies with `npm install` (or `pnpm install` or `yarn`), start a development server:
 
 ```bash
 npm run dev
