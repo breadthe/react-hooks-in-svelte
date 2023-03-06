@@ -5,21 +5,13 @@
 <div class="container h-full mx-auto p-4 sm:p-8 flex flex-col gap-8 sm:gap-16 sm:justify-center items-center">
 	<div class="space-y-4 text-center">
 		<h1>
-			<span
-				class="text-react"
-			>
-				React
-			</span>
+			<span class="text-react">React</span>
 			<span
 				class="bg-gradient-to-r from-react via-primary-100 to-svelte bg-clip-text text-transparent box-decoration-clone"
 			>
 				hooks in
 			</span>
-			<span
-				class="text-svelte"
-			>
-				Svelte
-			</span>
+			<span class="text-svelte">Svelte</span>
 		</h1>
 		<h3>
 			based on <a href="https://github.com/joshnuss/react-hooks-in-svelte" target="_blank" rel="noreferrer"

@@ -6,7 +6,14 @@
 	import { page } from "$app/stores"
 	import { AppShell, AppBar, AppRail, AppRailTile, LightSwitch } from "@skeletonlabs/skeleton"
 	import Icon from "../lib/Icon.svelte"
+
+    const siteName = "React Hooks in Svelte"
+    $: title = $page.url.pathname === "/" ? siteName : `${$page.data.title} | ${siteName}`
 </script>
+
+<svelte:head>
+    <title>{title}</title>
+</svelte:head>
 
 <!-- App Shell -->
 <AppShell>
@@ -14,7 +21,7 @@
 		<!-- App Bar -->
 		<AppBar class="bg-primary-500">
 			<svelte:fragment slot="lead">
-				<a href="/" title="Home page"><strong class="text-xl uppercase">React vs Svelte</strong></a>
+				<a href="/" title="Home page"><strong class="text-xl uppercase">{siteName}</strong></a>
 			</svelte:fragment>
 			<svelte:fragment slot="trail">
                 <!-- <LightSwitch /> -->
