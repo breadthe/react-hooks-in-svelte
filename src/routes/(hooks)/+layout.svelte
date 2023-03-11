@@ -15,9 +15,18 @@
     let svelteSize: number
     let diff: number
     let percentageSmaller: number
+    let cleanedReact: string // the source code stripped of comments and empty lines
+    let cleanedSvelte: string // the source code stripped of comments and empty lines
+
+    const stripComments = (code: string) => code.replace(/(\/\*([\s\S]*?)\*\/)|(\/\/(.*)$)/gm, '')
+    const stripEmptyLines = (code: string) => code.replace(/^[ \t]*\n/gm, '')
+
     $: {
-        reactSize = $page.data.react.length
-        svelteSize = $page.data.svelte.length
+        cleanedReact = stripEmptyLines(stripComments($page.data.react))
+        cleanedSvelte = stripEmptyLines(stripComments($page.data.svelte))
+
+        reactSize = cleanedReact.length
+        svelteSize = cleanedSvelte.length
         diff = Math.abs(reactSize - svelteSize)
         percentageSmaller = Math.round((diff / reactSize) * 100)
     }
