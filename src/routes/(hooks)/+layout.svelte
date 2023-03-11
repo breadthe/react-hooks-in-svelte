@@ -1,7 +1,4 @@
 <script>
-	import "@skeletonlabs/skeleton/themes/theme-skeleton.css"
-	import "@skeletonlabs/skeleton/styles/all.css"
-	import "../../app.postcss"
 	import { page } from "$app/stores"
 	import { CodeBlock } from "@skeletonlabs/skeleton"
 	import hljs from "highlight.js"
