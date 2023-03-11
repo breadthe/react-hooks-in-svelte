@@ -24,7 +24,7 @@
 				<a href="/" title="Home page"><strong class="text-xl uppercase">{siteName}</strong></a>
 			</svelte:fragment>
 			<svelte:fragment slot="trail">
-                <!-- <LightSwitch /> -->
+                <LightSwitch />
 			</svelte:fragment>
 		</AppBar>
 	</svelte:fragment>
